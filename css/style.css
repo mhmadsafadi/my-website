@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700&display=swap");
+
+:root {
+  --gr-bg-color: linear-gradient(90deg, #112d60, #dd83e0);
+}
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+nav {
+  background: var(--gr-bg-color);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+nav .nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-content ul {
+  display: flex;
+}
+
+nav .nav-content ul li {
+  list-style: none;
+}
+
+nav .nav-content ul li a {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  margin-left: 10px;
+  display: block;
+  border-radius: 13px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+nav .nav-content ul li a .icon {
+  position: relative;
+  color: #7758a0;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+nav .nav-content ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+nav .nav-content ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+nav .nav-content ul li a:hover:before {
+  top: 0;
+}
+
+nav .nav-content ul li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+nav .nav-content ul li:nth-child(2) a:before {
+  background: #e1306c;
+}
+
+nav .nav-content ul li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+header {
+  position: relative;
+  background: var(--gr-bg-color);
+  color: #fff;
+  height: 32rem;
+  border-radius: 0 0 30px 30px;
+}
+header .hero-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+header .hero-content h1 {
+    font-size: xxx-large;
+}
+
+header .hero-img img{
+    float: right;
+    animation: transforming 4s infinite alternate;
+}
+header .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media (max-width: 1100px) {
+    header .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    header .hero-img{
+        display: none;
+    }
+}
+@media (max-width: 900px) {
+    .container {
+        width: 85%;
+        margin: auto;
+    }
+    header .hero-content h1 {
+      font-size: xx-large;
+    } 
+}
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+  header .hero-content h1 {
+    font-size: x-large;
+  }
+}
+
+@keyframes transforming {
+    from {
+        scale: 0.9;
+        translate: 0 60px;
+    }
+    to {
+        scale: 1;
+        translate: 0 80px;
+    }
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+  }
+  .hero-content p span.typed-text {
+    font-weight: bold;
+    color: #db82df;
+  }
+  .hero-content p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+  .hero-content p span.cursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0%  { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #fff; }
+  }
+
+
+  /*-----------------*/
+  section{
+    margin-top: 6rem;
+  }
+  section .title {
+    position: relative;
+    font-size: 2rem;
+    background-image: linear-gradient(45deg, #112d60, #dd83e0);
+    background-size: 25%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    margin-bottom: 2.5rem;
+  }
+  section .title:before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    background: #db82df;
+    border-radius: 30px;
+}
+
+section .grid {
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+section .grid .card {
+  padding: 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all .4s ease;
+  color: #fff;
+}
+section .grid .card:hover {
+  transform: translateY(-10px);
+}
+section .grid .card .card-header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+section .grid .card .card-header i{
+  font-size: 4rem;
+}
+section .grid .card .card-header span{
+  font-weight: bold;
+}
+
+
+
+
+section .grid .card:nth-child(1) {
+  background: linear-gradient(90deg, #005f00, #005f00b0);
+  box-shadow: 0px 15px 20px #005f0080;
+}
+section .grid .card:nth-child(2) {
+  background: linear-gradient(90deg, black, #00000080);
+  box-shadow: 0px 15px 20px #00000080;
+}
+section .grid .card:nth-child(3) {
+  background: linear-gradient(90deg, #b1361e, #b1361ea1);
+  box-shadow: 0 15px 20px #b1361e80;
+}
+section .grid .card:nth-child(4) {
+  background: linear-gradient(45deg, #00AD9F, #00c7b796);
+  box-shadow: 0 15px 20px #00c7b780;
+}
+
+@media (max-width: 600px) {
+  section .title {
+    font-size: 1.5rem;
+  }
+  nav .nav-content ul li a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+
+
+
+
+.info-grid{
+  display: grid;
+  gap:2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.info-grid .info-ques{
+  color: #ce7cd6;
+  margin-bottom: 10px;
+}
+.info-grid .info-answer{
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #152f63bf;
+}
+
+.work-grid{
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.work-grid div{
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+
+
+footer{
+  background: var(--gr-bg-color);
+  color: #fff;
+}
+.footer{
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons{
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+}
+.social-icons a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+}
